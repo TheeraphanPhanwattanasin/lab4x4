@@ -1,45 +1,18 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <algorithm>
 using namespace std;
 
-void shuffle(int &,int &,int &,int &);
-
 int main(){
-	int a = 50, b = 100, c = 500, d = 1000;
+	int a[] = {1,2,4,6,9}; 
+	double b[] = {5.5,2.1,13,-7,6.9,0,25,11.1,-4}; 
 	
-	srand(time(0));	
+	int *pa = max_element(a,a+5); 
+	cout << "Address of the highest value in array A is " << pa << "\n";
+	cout << "The highest value in array A is "<< *pa << "\n";
 	
-	for(int i = 0;i < 10;i++){
-	    shuffle(a,b,c,d);
-	    cout << a << " " << b << " " << c << " " << d << "\n";
-	}
-	
+	double *pb = max_element(b,b+9); 
+	cout << "Address of the highest value in array B is " << pb << "\n";
+	cout << "The highest value in array B is "<< *pb << "\n";
+
 	return 0;
-}
-
-void shuffle(int &a,int &b,int &c,int &d){
-
-int temp;
-
-int x = rand()%4;
-switch(x){
-case 0:
-    temp = a;
-    a = b;
-    b = temp;
-case 1:
-    temp = b;
-    b = c;
-    c = temp;
-case 2:
-    temp = c;
-    c = d;
-    d = temp;
-case 3:
-    temp = d;
-    d = a;
-    a = temp;
-}
-
 }
