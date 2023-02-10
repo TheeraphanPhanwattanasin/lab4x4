@@ -11,7 +11,7 @@ int main(){
 	srand(time(0));	
 	
 	for(int i = 0;i < 10;i++){
-	    shuffle(&a,&b,&c,&d); //Modify input arguments to pointer 
+	    shuffle(&a,&b,&c,&d);
 	    cout << a << " " << b << " " << c << " " << d << "\n";
 	}
 	
